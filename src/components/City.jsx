@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import styles from './City.module.css';
-import { useCities } from '../hooks/useCitiesContext';
+import { useCities } from '../contexts/CitiesContext';
 import { flagEmojiToPNG } from '../utils/flagEmojiToPNG';
 import Spinner from './Spinner';
 import BackButton from './BackButton';

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './Map.module.css';
-import { useCities } from '../hooks/useCitiesContext';
+import { useCities } from '../contexts/CitiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
 import { useUrlPosition } from '../hooks/useUrlPosition';
 
@@ -18,7 +18,7 @@ import Button from './Button';
 
 function Map() {
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([31.5, 35]);
+  const [mapPosition, setMapPosition] = useState([40, 0]);
 
   const {
     isLoading: isLoadingPosition,
@@ -69,6 +69,7 @@ function Map() {
             <Popup>
               <span>{flagEmojiToPNG(city.emoji)}</span>
               <span>{city.cityName}</span>
+              <span>{city.notes}</span>
             </Popup>
           </Marker>
         ))}
